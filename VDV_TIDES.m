@@ -38,30 +38,7 @@ for i=1:length(list)
     
     %Combine Multiple file
     time =cat(1,time,S{i}{1});
-    
-    %timenum for matlab version > R2013 (more slower)%
-     %p = length(time);
-     %time_format = zeros(p,6);
-     %for n=1:p
-         %date_split = strsplit(char(time{n}));
-         %date = strsplit(char(date_split(1)),'/');
-         %duration =strsplit(char(date_split(2)),':');
-         %time_format(n,1)=str2double(char(date(1))); %Day
-         %time_format(n,2)=str2double(char(date(2))); %Month
-         %time_format(n,3)=str2double(char(date(3))); %Year
-         %time_format(n,4)=str2double(char(duration(1))); %Hour
-         %time_format(n,5)=str2double(char(duration(2))); %Minutes
-         %time_format(n,6)=str2double(char(duration(3))); %Seconds
-     %end
-     %timenum for matlab version > R2013 (more slower)%
-     %timenum = datenum(time_format(:,3),time_format(:,2),time_format(:,1),...
-         %time_format(:,4),time_format(:,5),time_format(:,6) ); %timenum
-         
-    %Remark if you use matlab version > R2013a , recommended to use script
-    %above and clear the comment , then make comment for script below (%)
-         
-    
-    %timenum for matlab version <=R2013 (more fast 6 times)
+
     timenum = datenum( time,'dd/mm/yyyy HH:MM:SS'); %timenum
     %Remark if you use matlab version <= R2013a , recommended to use this
     %script
